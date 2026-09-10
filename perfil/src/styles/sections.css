@@ -1,0 +1,316 @@
+/* Seções de conteúdo (Sobre, Experiência) — fundo claro */
+
+.about,
+.experience {
+	--section-pad-x: 1.5rem;
+	width: 100%;
+	padding: 5.5rem var(--section-pad-x) 5.75rem;
+	background: var(--color-section-bg);
+	color: var(--color-section-muted);
+	font-family: var(--font-sans);
+}
+
+.about > .section-header,
+.about > .about-content,
+.experience > .section-header,
+.experience > .experience-content {
+	max-width: 1120px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+/* ——— Cabeçalho de seção ——— */
+.section-header {
+	display: flex;
+	align-items: flex-start;
+	gap: 2rem;
+	margin-bottom: 2.75rem;
+}
+
+.section-number {
+	flex-shrink: 0;
+	padding-top: 0.2rem;
+	color: var(--color-section-number);
+	font-family: var(--font-display);
+	font-size: 1.05rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 1;
+}
+
+.section-eyebrow {
+	margin: 0 0 0.35rem;
+	color: var(--color-section-number);
+	font-family: var(--font-display);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.section-header h2 {
+	margin: 0;
+	color: var(--color-section-ink);
+	font-family: var(--font-display);
+	font-size: clamp(1.75rem, 3.2vw, 2.15rem);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	line-height: 1.15;
+}
+
+/* ——— Sobre ——— */
+.about-content {
+	display: flex;
+	flex-direction: column;
+	gap: 2.75rem;
+	max-width: 42rem;
+}
+
+.about-text {
+	display: flex;
+	flex-direction: column;
+	gap: 1.35rem;
+}
+
+.about-text p {
+	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.75;
+	color: var(--color-section-muted);
+}
+
+.about-text strong {
+	color: var(--color-section-ink);
+	font-weight: 600;
+}
+
+.about-details {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.about-detail {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+.about-detail > i {
+	flex-shrink: 0;
+	width: 1.25rem;
+	margin-top: 0.15rem;
+	color: var(--color-section-ink);
+	font-size: 1.05rem;
+	text-align: center;
+	line-height: 1.4;
+}
+
+.about-detail-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	min-width: 0;
+}
+
+.about-detail-body strong {
+	color: var(--color-section-ink);
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.about-detail-body span,
+.about-detail-body small {
+	color: var(--color-section-muted);
+	font-size: 0.95rem;
+	font-weight: 400;
+	line-height: 1.55;
+}
+
+.about-detail-body small {
+	font-size: 0.95rem;
+}
+
+/* ——— Experiência ——— */
+.experience-content {
+	max-width: 52rem;
+}
+
+.experience-item {
+	display: grid;
+	grid-template-columns: 7.5rem minmax(0, 1fr);
+	gap: 1.75rem 2.5rem;
+	align-items: start;
+}
+
+.experience-period {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding-top: 0.35rem;
+	color: var(--color-section-number);
+	font-family: var(--font-display);
+	font-size: 0.88rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	line-height: 1.35;
+}
+
+.experience-info {
+	min-width: 0;
+}
+
+.experience-heading {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.75rem 1.25rem;
+	margin-bottom: 1rem;
+}
+
+.experience-heading h3 {
+	margin: 0;
+	color: var(--color-section-ink);
+	font-family: var(--font-display);
+	font-size: 1.2rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.25;
+}
+
+.experience-heading p {
+	margin: 0.3rem 0 0;
+	color: var(--color-section-muted);
+	font-size: 0.98rem;
+	line-height: 1.4;
+}
+
+.experience-type {
+	flex-shrink: 0;
+	padding: 0.3rem 0.65rem;
+	border: 1px solid color-mix(in srgb, var(--color-section-number) 55%, transparent);
+	border-radius: 0.35rem;
+	color: var(--color-section-ink);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+
+.experience-description {
+	margin: 0 0 1.25rem;
+	font-size: 1.02rem;
+	line-height: 1.7;
+	color: var(--color-section-muted);
+}
+
+.experience-info ul {
+	margin: 0 0 1.5rem;
+	padding: 0 0 0 1.15rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.experience-info li {
+	color: var(--color-section-muted);
+	font-size: 0.98rem;
+	line-height: 1.6;
+}
+
+.experience-stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.experience-stack span {
+	padding: 0.35rem 0.7rem;
+	border: 1px solid color-mix(in srgb, var(--color-section-number) 45%, transparent);
+	border-radius: 0.4rem;
+	background: color-mix(in srgb, var(--color-section-ink) 3%, transparent);
+	color: var(--color-section-ink);
+	font-size: 0.8rem;
+	font-weight: 500;
+	line-height: 1.3;
+}
+
+/* ——— Responsivo ——— */
+@media (max-width: 900px) {
+	.about,
+	.experience {
+		padding-top: 4.5rem;
+		padding-bottom: 4.75rem;
+	}
+
+	.section-header {
+		gap: 1.35rem;
+		margin-bottom: 2.25rem;
+	}
+
+	.experience-item {
+		grid-template-columns: 6.25rem minmax(0, 1fr);
+		gap: 1.25rem 1.75rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.about,
+	.experience {
+		--section-pad-x: 1.15rem;
+		padding-top: 3.75rem;
+		padding-bottom: 4rem;
+	}
+
+	.section-header {
+		flex-direction: column;
+		gap: 0.65rem;
+		margin-bottom: 1.85rem;
+	}
+
+	.section-number {
+		padding-top: 0;
+		font-size: 0.95rem;
+	}
+
+	.about-content {
+		gap: 2.15rem;
+	}
+
+	.about-text p {
+		font-size: 1rem;
+	}
+
+	.experience-item {
+		grid-template-columns: 1fr;
+		gap: 0.85rem;
+	}
+
+	.experience-period {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem;
+		padding-top: 0;
+	}
+
+	.experience-period span:not(:last-child)::after {
+		content: "—";
+		margin-left: 0.35rem;
+		opacity: 0.7;
+	}
+
+	.experience-heading {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.experience-description,
+	.experience-info li {
+		font-size: 0.95rem;
+	}
+}

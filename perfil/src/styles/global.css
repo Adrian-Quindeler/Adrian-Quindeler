@@ -5,6 +5,10 @@
 	--color-text: #f8fafc;
 	--color-muted: #94a3b8;
 	--color-accent: #4ade80;
+	--color-section-bg: #f8fafc;
+	--color-section-ink: #0f172a;
+	--color-section-muted: #475569;
+	--color-section-number: #94a3b8;
 }
 
 *,
@@ -36,7 +40,9 @@ body {
 
 main {
 	width: 100%;
+	max-width: 100%;
 	display: block;
+	overflow-x: clip;
 }
 
 img {
