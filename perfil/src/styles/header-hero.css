@@ -78,8 +78,17 @@
 
 .site-header .header-social-links a:hover,
 .site-header .header-social-links a:focus-visible {
-	color: var(--header-accent);
 	transform: translateY(-1px);
+}
+
+.site-header .header-social-links a.social-github:hover,
+.site-header .header-social-links a.social-github:focus-visible {
+	color: #fff;
+}
+
+.site-header .header-social-links a.social-linkedin:hover,
+.site-header .header-social-links a.social-linkedin:focus-visible {
+	color: #0a66c2;
 }
 
 @media (max-width: 900px) {
