@@ -1,3 +1,90 @@
+---
+const experiences = [
+    {
+        role: "Programador",
+        company: "Comunica Contact Center",
+        start: "nov 2025",
+        end: "Presente",
+        type: "Tempo integral",
+        description:
+            "Atuação na criação de automações para agilizar processos internos e na evolução contínua do principal sistema da empresa.",
+        highlights: [
+            "Automação de processos em Python, com scripts e rotinas que eliminam tarefas manuais repetitivas e reduzem erros operacionais.",
+            "Desenvolvimento e manutenção do Zeus, sistema da empresa, implementando novas telas e funcionalidades conforme as necessidades da operação.",
+            "Correções e otimizações de backend e frontend, analisando o comportamento do sistema para manter o desempenho.",
+            "Criação de novos sistemas web internos sob demanda, da modelagem do banco de dados à implementação completa.",
+            "Integração das aplicações ao ecossistema já existente na empresa.",
+        ],
+        stack: [
+            "TypeScript",
+            "Node.js",
+            "Python",
+            "FastAPI",
+            "PHP",
+            "PostgreSQL",
+            "MySQL",
+        ],
+    },
+    {
+        role: "Assistente de TI",
+        company: "Comunica Contact Center",
+        start: "jan 2025",
+        end: "nov 2025",
+        type: "Tempo integral",
+        description:
+            "Suporte técnico e apoio à infraestrutura de tecnologia da informação utilizada pela operação.",
+        highlights: [
+            "Atendimento de chamados e suporte técnico a usuários, estações de trabalho e sistemas internos.",
+            "Manutenção de servidores, redes e serviços internos da infraestrutura.",
+            "Consultas SQL para levantamento de informações e apoio à operação.",
+        ],
+        stack: ["Linux", "Redes", "SQL"],
+    },
+    {
+        role: "Estagiário",
+        company: "Comunica Contact Center",
+        start: "jul 2024",
+        end: "jan 2025",
+        type: "Estágio",
+        description:
+            "Primeira experiência no setor de TI, com atuação em atividades variadas de infraestrutura, desenvolvimento web e dados.",
+        highlights: [
+            "Criação e configuração de servidores Linux (Ubuntu) para ambientes de homologação.",
+            "Desenvolvimento frontend com Django, HTML, CSS e JavaScript.",
+            "Desenvolvimento backend com PHP e Python.",
+            "SQL em bancos de dados MariaDB e PostgreSQL.",
+            "Criação de relatórios interativos com Power BI.",
+        ],
+        stack: [
+            "Python",
+            "Django",
+            "PHP",
+            "JavaScript",
+            "MariaDB",
+            "PostgreSQL",
+            "Linux",
+            "Power BI",
+        ],
+    },
+    {
+        role: "Estagiário",
+        company: "Cafezinho",
+        start: "mai 2024",
+        end: "jul 2024",
+        type: "Estágio remoto",
+        description:
+            "Desenvolvedor front-end no aplicativo de relacionamento voltado para brasileiros que vivem no exterior, com atividades organizadas em sprints pela metodologia ágil Scrum.",
+        highlights: [
+            "Design e refinamento dos layouts das telas no Figma.",
+            "Prototipação das interfaces em XML no Android Studio.",
+            "Implementação das telas e suas funcionalidades em Java, integrando-as à aplicação.",
+            "Versionamento de código com Git e GitHub para colaborar com a equipe.",
+        ],
+        stack: ["Java", "Android Studio", "XML", "Figma", "Git"],
+    },
+];
+---
+
 <section id="experiencia" class="experience">
     <div class="section-header">
         <span class="section-number">02</span>
@@ -9,66 +96,42 @@
     </div>
 
     <div class="experience-content">
-        <article class="experience-item">
-            <div class="experience-period">
-                <span>2024</span>
-                <span>Presente</span>
-            </div>
+        {experiences.map((experience) => (
+            <article class="experience-item">
+                <div class="experience-period">
+                    <span>{experience.start}</span>
+                    <span>{experience.end}</span>
+                </div>
 
-            <div class="experience-info">
-                <div class="experience-heading">
-                    <div>
-                        <h3>Programador Júnior</h3>
-                        <p>Comunica Contact Center</p>
+                <div class="experience-info">
+                    <div class="experience-heading">
+                        <div>
+                            <h3>{experience.role}</h3>
+                            <p>{experience.company}</p>
+                        </div>
+
+                        <span class="experience-type">
+                            {experience.type}
+                        </span>
                     </div>
 
-                    <span class="experience-type">
-                        Profissional
-                    </span>
+                    <p class="experience-description">
+                        {experience.description}
+                    </p>
+
+                    <ul>
+                        {experience.highlights.map((highlight) => (
+                            <li>{highlight}</li>
+                        ))}
+                    </ul>
+
+                    <div class="experience-stack">
+                        {experience.stack.map((technology) => (
+                            <span>{technology}</span>
+                        ))}
+                    </div>
                 </div>
-
-                <p class="experience-description">
-                    Desenvolvimento e manutenção de sistemas web utilizados
-                    em ambiente profissional, atuando em backend, frontend,
-                    bancos de dados, integrações e regras de negócio.
-                </p>
-
-                <ul>
-                    <li>
-                        Desenvolvimento e manutenção de aplicações web
-                        e APIs.
-                    </li>
-
-                    <li>
-                        Implementação e evolução de funcionalidades de
-                        sistemas existentes.
-                    </li>
-
-                    <li>
-                        Trabalho com bancos de dados relacionais e
-                        persistência de dados.
-                    </li>
-
-                    <li>
-                        Implementação de autenticação, controle de acesso
-                        e regras de negócio.
-                    </li>
-
-                    <li>
-                        Integração entre aplicações e serviços externos.
-                    </li>
-                </ul>
-
-                <div class="experience-stack">
-                    <span>TypeScript</span>
-                    <span>Node.js</span>
-                    <span>Python</span>
-                    <span>FastAPI</span>
-                    <span>PHP</span>
-                    <span>PostgreSQL</span>
-                    <span>MySQL</span>
-                </div>
-            </div>
-        </article>
+            </article>
+        ))}
     </div>
 </section>
