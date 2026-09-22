@@ -1,0 +1,312 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "./projects.css";
+---
+
+<Layout
+    title="Autoatendimento Maria Bonita | Adrian Jansen Quindeler"
+    description="Case study do sistema de autoatendimento da lanchonete Maria Bonita."
+>
+
+    <main class="project-page">
+
+        <a href="/#projetos" class="project-back">
+            ← Voltar para projetos
+        </a>
+
+        <header class="project-hero">
+            <div class="project-meta">
+                <span>PUBLIC</span>
+                <span>PROJETO ACADÊMICO</span>
+            </div>
+
+            <h1>Autoatendimento — Maria Bonita</h1>
+
+            <p class="project-subtitle">
+                Sistema de autoatendimento para lanchonete com pedidos,
+                pagamento online, consulta de status e painel administrativo.
+            </p>
+
+            <div class="project-technologies">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>Supabase</span>
+                <span>Mercado Pago</span>
+            </div>
+        </header>
+
+        <figure class="project-cover">
+            <img
+                src="/images/projects/maria-bonita-cover.jpg"
+                alt="Interface do sistema de autoatendimento Maria Bonita"
+            />
+
+            <figcaption>
+                Interface do autoatendimento da lanchonete Maria Bonita.
+            </figcaption>
+        </figure>
+
+        <div class="project-layout">
+            <article class="project-content">
+                <section>
+                    <p class="section-eyebrow">01 · Visão geral</p>
+
+                    <h2>Sobre o projeto</h2>
+
+                    <p>
+                        O sistema de Autoatendimento Maria Bonita foi criado
+                        para agilizar pedidos e pagamentos em uma lanchonete
+                        com grande fluxo de clientes.
+                    </p>
+
+                    <p>
+                        A solução permite que vários clientes façam seus
+                        pedidos simultaneamente em totens independentes,
+                        reduzindo filas e organizando o atendimento desde a
+                        escolha dos produtos até o acompanhamento do pedido.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">02 · Problema</p>
+
+                    <h2>O que o sistema resolve?</h2>
+
+                    <p>
+                        O sistema reduz a dependência do atendimento manual no
+                        momento do pedido, distribuindo a operação entre totens
+                        e oferecendo um fluxo simples para o cliente.
+                    </p>
+
+                    <ul>
+                        <li>Redução de filas em horários de alta movimentação</li>
+                        <li>Pedidos simultâneos em totens independentes</li>
+                        <li>Seleção de produtos com controle de quantidade</li>
+                        <li>Pagamento por cartão, Pix ou boleto</li>
+                        <li>Consulta do status do pedido</li>
+                        <li>Visualização de vendas e produtos no painel</li>
+                        <li>Coleta de avaliação após o pagamento</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">03 · Solução</p>
+
+                    <h2>Como funciona</h2>
+
+                    <p>
+                        O cliente começa informando seu nome na tela inicial do
+                        totem. Em seguida, navega pelo catálogo e escolhe os
+                        produtos, ajustando a quantidade de cada item antes de
+                        revisar o pedido.
+                    </p>
+
+                    <p>
+                        Na tela de pagamento, o sistema apresenta os produtos,
+                        os valores individuais e o total da compra. A integração
+                        com o Mercado Pago cria a preferência e encaminha o
+                        cliente para um checkout seguro.
+                    </p>
+
+                    <p>
+                        Após a criação do pedido e o retorno do pagamento, o
+                        cliente pode consultar seu status. Ao final do fluxo,
+                        um popup permite registrar uma avaliação da experiência.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">04 · Arquitetura</p>
+
+                    <h2>Arquitetura do sistema</h2>
+
+                    <p>
+                        A interface do totem utiliza HTML, CSS e JavaScript
+                        para conduzir o cliente entre as telas e manter os
+                        produtos selecionados no armazenamento local.
+                    </p>
+
+                    <div class="architecture">
+                        <div class="architecture-node">
+                            Totem
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            API Express
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Supabase
+                        </div>
+                    </div>
+
+                    <div class="architecture">
+                        <div class="architecture-node">
+                            Pedido
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Mercado Pago
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Status
+                        </div>
+                    </div>
+
+                    <p>
+                        O backend em Node.js e Express expõe a API REST, cria e
+                        envia pedidos ao banco PostgreSQL do Supabase e integra
+                        o fluxo de pagamento ao Mercado Pago.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">05 · Funcionalidades</p>
+
+                    <h2>Principais funcionalidades</h2>
+
+                    <div class="feature-grid">
+                        <div>
+                            <h3>Identificação do cliente</h3>
+                            <p>
+                                Tela inicial para informar o nome e associar a
+                                compra ao cliente.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Seleção de produtos</h3>
+                            <p>
+                                Catálogo com controle de quantidade para montar
+                                o pedido diretamente no totem.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Resumo da compra</h3>
+                            <p>
+                                Exibição dos itens, valores individuais e total
+                                antes da confirmação.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Pagamento online</h3>
+                            <p>
+                                Checkout integrado ao Mercado Pago para cartão,
+                                Pix e boleto.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Status do pedido</h3>
+                            <p>
+                                Consulta do andamento do pedido após sua criação
+                                e pagamento.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Painel administrativo</h3>
+                            <p>
+                                Visualização de vendas e gerenciamento dos
+                                produtos da lanchonete.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">06 · Decisões técnicas</p>
+
+                    <h2>Algumas decisões importantes</h2>
+
+                    <h3>Totens independentes</h3>
+
+                    <p>
+                        Cada totem conduz seu próprio fluxo de compra, o que
+                        permite que vários clientes façam pedidos ao mesmo tempo
+                        sem concentrar a operação em um único ponto de entrada.
+                    </p>
+
+                    <h3>Armazenamento local do pedido</h3>
+
+                    <p>
+                        Os produtos selecionados ficam armazenados localmente no
+                        navegador durante a navegação, preservando o carrinho
+                        entre as telas do processo de compra.
+                    </p>
+
+                    <h3>Checkout externo de pagamentos</h3>
+
+                    <p>
+                        O Mercado Pago assume o processamento do cartão, Pix e
+                        boleto, enquanto a API fica responsável por criar a
+                        preferência e registrar o pedido.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">07 · Tecnologias</p>
+
+                    <h2>Stack</h2>
+
+                    <div class="stack-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>Supabase</span>
+                        <span>PostgreSQL</span>
+                        <span>Mercado Pago SDK</span>
+                    </div>
+                </section>
+            </article>
+
+            <aside class="project-sidebar">
+                <div>
+                    <span>Tipo</span>
+                    <strong>Projeto acadêmico</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>Concluído</strong>
+                </div>
+
+                <div>
+                    <span>Frontend</span>
+                    <strong>HTML / CSS / JavaScript</strong>
+                </div>
+
+                <div>
+                    <span>Backend</span>
+                    <strong>Node.js / Express</strong>
+                </div>
+
+                <div>
+                    <span>Database</span>
+                    <strong>Supabase / PostgreSQL</strong>
+                </div>
+
+                <div>
+                    <span>Payments</span>
+                    <strong>Mercado Pago</strong>
+                </div>
+            </aside>
+        </div>
+    </main>
+</Layout>

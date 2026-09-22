@@ -1,0 +1,331 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "./projects.css";
+---
+
+<Layout
+    title="VCOM — Video Communication | Adrian Jansen Quindeler"
+    description="Case study do VCOM, sistema profissional de atendimento por vídeo."
+>
+
+    <main class="project-page">
+
+        <a href="/#projetos" class="project-back">
+            ← Voltar para projetos
+        </a>
+
+
+        <!-- HERO -->
+        <header class="project-hero">
+            <div class="project-meta">
+                <span>PRIVATE</span>
+                <span>PROJETO PROFISSIONAL</span>
+            </div>
+
+            <h1>VCOM — Video Communication</h1>
+
+            <p class="project-subtitle">
+                Sistema de atendimento por vídeo com gerenciamento
+                de filas, chamadas, chat, gravações e monitoramento
+                operacional.
+            </p>
+
+            <div class="project-technologies">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>PostgreSQL</span>
+                <span>Redis</span>
+                <span>LiveKit</span>
+                <span>WebSocket</span>
+            </div>
+        </header>
+
+
+        <!-- CAPA -->
+        <figure class="project-cover">
+            <img
+                src="/images/projects/vcom-cover.jpg"
+                alt="Interface do sistema VCOM"
+            />
+
+            <figcaption>
+                Interface do sistema VCOM — dados sensíveis omitidos.
+            </figcaption>
+        </figure>
+
+
+        <!-- CONTEÚDO -->
+        <div class="project-layout">
+            <article class="project-content">
+                <section>
+                    <p class="section-eyebrow">01 · Visão geral</p>
+
+                    <h2>Sobre o projeto</h2>
+
+                    <p>
+                        O VCOM é um sistema de comunicação por vídeo
+                        desenvolvido para atendimento de clientes surdos.
+                    </p>
+
+                    <p>
+                        O sistema permite que um solicitante entre em
+                        uma fila de atendimento e seja direcionado
+                        para um operador disponível, que pode iniciar
+                        uma chamada de vídeo, utilizar o chat e
+                        acompanhar informações relacionadas ao
+                        atendimento.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">
+                        02 · Problema
+                    </p>
+
+                    <h2>O que o sistema resolve?</h2>
+
+                    <p>
+                        O sistema centraliza o fluxo de atendimento
+                        por vídeo, desde a entrada do solicitante
+                        até o encerramento da chamada.
+                    </p>
+
+                    <ul>
+                        <li>Gerenciamento de fila de atendimento</li>
+                        <li>Distribuição de solicitações</li>
+                        <li>Comunicação por vídeo</li>
+                        <li>Chat durante o atendimento</li>
+                        <li>Gravação das chamadas</li>
+                        <li>Monitoramento operacional</li>
+                        <li>Relatórios e acompanhamento de métricas</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">
+                        03 · Solução
+                    </p>
+
+                    <h2>Como funciona</h2>
+
+                    <p>
+                        O fluxo começa quando o solicitante acessa
+                        o sistema e informa o nome para
+                        iniciar um atendimento.
+                    </p>
+
+                    <p>
+                        A solicitação é colocada em uma fila e o
+                        backend controla seu estado até que um operador
+                        esteja disponível.
+                    </p>
+
+                    <p>
+                        Quando o atendimento é aceito, o backend
+                        prepara a chamada e cria as credenciais
+                        necessárias para que os participantes entrem
+                        na sala de vídeo.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">
+                        04 · Arquitetura
+                    </p>
+
+                    <h2>Arquitetura do sistema</h2>
+
+                    <p>
+                        A aplicação utiliza o FastAPI como camada
+                        responsável pela orquestração das regras de
+                        negócio e comunicação com os serviços de
+                        infraestrutura.
+                    </p>
+
+                    <div class="architecture">
+                        <div class="architecture-node">
+                            Browser
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            FastAPI
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            PostgreSQL
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Para comunicação em tempo real, o sistema
+                        utiliza WebSockets e Redis Pub/Sub.
+                    </p>
+
+                    <p>
+                        A transmissão de áudio e vídeo não passa
+                        diretamente pela API. O navegador estabelece
+                        a conexão de mídia diretamente com o LiveKit,
+                        enquanto o backend permanece responsável pela
+                        autenticação e orquestração do atendimento.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">
+                        05 · Funcionalidades
+                    </p>
+
+                    <h2>Principais funcionalidades</h2>
+
+                    <div class="feature-grid">
+
+                        <div>
+                            <h3>Fila de atendimento</h3>
+                            <p>
+                                Controle do estado dos atendimentos
+                                e direcionamento para operadores.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Videochamada</h3>
+                            <p>
+                                Comunicação em tempo real utilizando
+                                LiveKit.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Chat</h3>
+                            <p>
+                                Comunicação durante o atendimento
+                                utilizando WebSockets e Redis.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Gravações</h3>
+                            <p>
+                                Registro das chamadas através do
+                                sistema de Egress.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Monitoramento</h3>
+                            <p>
+                                Acompanhamento de chamadas e operação
+                                em tempo real.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Relatórios</h3>
+                            <p>
+                                Geração e acompanhamento de dados
+                                operacionais.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">
+                        06 · Decisões técnicas
+                    </p>
+
+                    <h2>Algumas decisões importantes</h2>
+
+                    <h3>Separação entre API e mídia</h3>
+
+                    <p>
+                        A API não atua como intermediária para o
+                        tráfego de áudio e vídeo. O LiveKit fica
+                        responsável pela comunicação de mídia,
+                        reduzindo a carga sobre o backend.
+                    </p>
+
+                    <h3>Redis para comunicação entre workers</h3>
+
+                    <p>
+                        Redis Pub/Sub permite distribuir eventos de
+                        comunicação entre diferentes processos da
+                        aplicação.
+                    </p>
+
+                    <h3>Controle de acesso</h3>
+
+                    <p>
+                        O sistema utiliza autenticação de operadores
+                        e tokens específicos para os atendimentos,
+                        evitando que o identificador de uma chamada
+                        seja suficiente para acessar seus recursos.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">
+                        07 · Tecnologias
+                    </p>
+
+                    <h2>Stack</h2>
+
+                    <div class="stack-list">
+
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>Jinja2</span>
+                        <span>PostgreSQL</span>
+                        <span>SQLAlchemy</span>
+                        <span>Alembic</span>
+                        <span>Redis</span>
+                        <span>WebSocket</span>
+                        <span>LiveKit</span>
+                        <span>Leaflet</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </section>
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="project-sidebar">
+                <div>
+                    <span>Tipo</span>
+                    <strong>Projeto profissional</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>Em produção</strong>
+                </div>
+
+                <div>
+                    <span>Backend</span>
+                    <strong>Python / FastAPI</strong>
+                </div>
+
+                <div>
+                    <span>Database</span>
+                    <strong>PostgreSQL</strong>
+                </div>
+
+                <div>
+                    <span>Real-time</span>
+                    <strong>Redis / WebSocket</strong>
+                </div>
+
+                <div>
+                    <span>Video</span>
+                    <strong>LiveKit</strong>
+                </div>
+            </aside>
+        </div>
+    </main>
+</Layout>

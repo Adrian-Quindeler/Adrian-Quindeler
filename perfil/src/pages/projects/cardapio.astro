@@ -1,0 +1,311 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "./projects.css";
+---
+
+<Layout
+    title="Cardápio — Mamute BR 262 | Adrian Jansen Quindeler"
+    description="Case study do Cardápio Mamute BR 262, sistema digital de catálogo e painel administrativo."
+>
+
+    <main class="project-page">
+
+        <a href="/#projetos" class="project-back">
+            ← Voltar para projetos
+        </a>
+
+        <header class="project-hero">
+            <div class="project-meta">
+                <span>PUBLIC</span>
+                <span>PROJETO PROFISSIONAL</span>
+            </div>
+
+            <h1>Cardápio — Mamute BR 262</h1>
+
+            <p class="project-subtitle">
+                Cardápio digital e painel administrativo para uma sorveteria,
+                com catálogo público, controle de produtos e gestão da loja.
+            </p>
+
+            <div class="project-technologies">
+                <span>Next.js</span>
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Turso</span>
+                <span>Drizzle ORM</span>
+                <span>Better Auth</span>
+            </div>
+        </header>
+
+        <figure class="project-cover">
+            <img
+                src="/images/projects/cardapio-cover.jpg"
+                alt="Cardápio digital da sorveteria Mamute BR 262"
+            />
+
+            <figcaption>
+                Cardápio público da Mamute BR 262 e sua experiência de consulta de produtos.
+            </figcaption>
+        </figure>
+
+        <div class="project-layout">
+            <article class="project-content">
+                <section>
+                    <p class="section-eyebrow">01 · Visão geral</p>
+
+                    <h2>Sobre o projeto</h2>
+
+                    <p>
+                        O Cardápio é uma aplicação web desenvolvida para a
+                        sorveteria Mamute BR 262, reunindo a apresentação do
+                        catálogo e a administração das informações da loja.
+                    </p>
+
+                    <p>
+                        A home é pública e permite consultar produtos, preços,
+                        categorias, imagens e o status de funcionamento. A área
+                        administrativa concentra o controle do catálogo, dos
+                        horários, da marca e dos usuários autorizados.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">02 · Problema</p>
+
+                    <h2>O que o sistema resolve?</h2>
+
+                    <p>
+                        O sistema substitui um cardápio difícil de atualizar por
+                        uma experiência digital centralizada, mantendo as
+                        informações exibidas ao cliente alinhadas com a operação.
+                    </p>
+
+                    <ul>
+                        <li>Consulta pública do catálogo da loja</li>
+                        <li>Organização por categorias e subcategorias</li>
+                        <li>Exibição de preços de varejo e atacado</li>
+                        <li>Indicação de loja aberta ou fechada</li>
+                        <li>Atualização de imagens e informações da marca</li>
+                        <li>Controle de acesso ao painel administrativo</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">03 · Solução</p>
+
+                    <h2>Como funciona</h2>
+
+                    <p>
+                        Na área pública, os dados do cardápio são carregados no
+                        servidor e enviados para a interface. A troca de
+                        subcategoria acontece no cliente sem uma nova consulta
+                        ao banco, deixando a navegação mais imediata.
+                    </p>
+
+                    <p>
+                        No painel, usuários com os papéis de admin ou manager
+                        podem gerenciar categorias, subcategorias, produtos,
+                        usuários, horários e informações da loja.
+                    </p>
+
+                    <p>
+                        As alterações passam por handlers de API, validação e
+                        services antes de chegar aos repositories responsáveis
+                        pelo acesso ao banco.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">04 · Arquitetura</p>
+
+                    <h2>Arquitetura do sistema</h2>
+
+                    <p>
+                        A aplicação utiliza o App Router do Next.js e separa os
+                        caminhos de leitura do cardápio e de escrita do painel
+                        administrativo.
+                    </p>
+
+                    <div class="architecture">
+                        <div class="architecture-node">
+                            Home RSC
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            home-data.ts
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Turso
+                        </div>
+                    </div>
+
+                    <div class="architecture">
+                        <div class="architecture-node">
+                            Admin UI
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            API → Services → Repositories
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Turso
+                        </div>
+                    </div>
+
+                    <p>
+                        O Better Auth protege as rotas administrativas e o
+                        Cloudinary armazena imagens enviadas pelo painel.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">05 · Funcionalidades</p>
+
+                    <h2>Principais funcionalidades</h2>
+
+                    <div class="feature-grid">
+                        <div>
+                            <h3>Cardápio público</h3>
+                            <p>
+                                Catálogo de produtos ativos com categorias,
+                                imagens e preços de varejo e atacado.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Status da loja</h3>
+                            <p>
+                                Horários de funcionamento e indicador de loja
+                                aberta ou fechada.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Gestão de produtos</h3>
+                            <p>
+                                CRUD de produtos, categorias e subcategorias
+                                pelo painel administrativo.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Autenticação</h3>
+                            <p>
+                                Login protegido, usuários inativos bloqueados e
+                                papéis de admin e manager.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Identidade da loja</h3>
+                            <p>
+                                Gerenciamento de nome, logo e imagem de destaque
+                                com upload de arquivos.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Painel responsivo</h3>
+                            <p>
+                                Dashboard com atalhos e menu lateral em drawer
+                                para uso em telas menores.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">06 · Decisões técnicas</p>
+
+                    <h2>Algumas decisões importantes</h2>
+
+                    <h3>Leitura no servidor</h3>
+
+                    <p>
+                        A home carrega os dados no servidor e passa as informações
+                        como props para a interface, evitando consultas extras ao
+                        trocar filtros de categoria.
+                    </p>
+
+                    <h3>Camadas para escrita</h3>
+
+                    <p>
+                        O fluxo de administração separa UI, route handlers,
+                        services e repositories. Assim, validações e regras de
+                        negócio não ficam acopladas à interface ou ao SQL.
+                    </p>
+
+                    <h3>Autorização no painel</h3>
+
+                    <p>
+                        O middleware protege as rotas de administração, enquanto
+                        a autenticação controla usuários ativos e seus papéis de
+                        acesso.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">07 · Tecnologias</p>
+
+                    <h2>Stack</h2>
+
+                    <div class="stack-list">
+                        <span>Next.js 16</span>
+                        <span>React 19</span>
+                        <span>TypeScript</span>
+                        <span>CSS Modules</span>
+                        <span>Lucide</span>
+                        <span>Turso</span>
+                        <span>SQLite</span>
+                        <span>Drizzle ORM</span>
+                        <span>Better Auth</span>
+                        <span>Zod</span>
+                        <span>Cloudinary</span>
+                    </div>
+                </section>
+            </article>
+
+            <aside class="project-sidebar">
+                <div>
+                    <span>Tipo</span>
+                    <strong>Projeto público</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>Em desenvolvimento</strong>
+                </div>
+
+                <div>
+                    <span>Frontend</span>
+                    <strong>Next.js / React</strong>
+                </div>
+
+                <div>
+                    <span>Database</span>
+                    <strong>Turso / SQLite</strong>
+                </div>
+
+                <div>
+                    <span>Auth</span>
+                    <strong>Better Auth</strong>
+                </div>
+
+                <div>
+                    <span>Images</span>
+                    <strong>Cloudinary</strong>
+                </div>
+            </aside>
+        </div>
+    </main>
+</Layout>

@@ -1,0 +1,330 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "./projects.css";
+---
+
+<Layout
+    title="Sistema Zeus — Comunica Contact Center | Adrian Jansen Quindeler"
+    description="Case study do Sistema Zeus, plataforma operacional da Comunica Contact Center."
+>
+
+    <main class="project-page">
+
+        <a href="/#projetos" class="project-back">
+            ← Voltar para projetos
+        </a>
+
+        <header class="project-hero">
+            <div class="project-meta">
+                <span>PRIVATE</span>
+                <span>PROJETO PROFISSIONAL</span>
+            </div>
+
+            <h1>Zeus — Comunica Contact Center</h1>
+
+            <p class="project-subtitle">
+                Sistema interno da Comunica Contact Center com login próprio,
+                dashboard modular, menu lateral e ferramentas para administrar
+                pessoas, campanhas, indicadores e logística.
+            </p>
+
+            <div class="project-technologies">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Bootstrap</span>
+                <span>jQuery</span>
+                <span>Power BI</span>
+                <span>Secullum</span>
+            </div>
+        </header>
+
+        <figure class="project-cover">
+            <img
+                src="/images/projects/zeus-cover.jpg"
+                alt="Plataforma operacional Sistema Zeus"
+            />
+
+            <figcaption>
+                Sistema Zeus — plataforma interna da Comunica Contact Center.
+            </figcaption>
+        </figure>
+
+        <div class="project-layout">
+            <article class="project-content">
+                <section>
+                    <p class="section-eyebrow">01 · Visão geral</p>
+
+                    <h2>Sobre o projeto</h2>
+
+                    <p>
+                        O Zeus é um sistema interno da Comunica Contact Center
+                        que organiza diferentes áreas da operação em uma única
+                        interface. Depois do login, o usuário encontra um
+                        painel principal com atalhos para os módulos liberados
+                        pelo seu perfil.
+                    </p>
+
+                    <p>
+                        A experiência combina um menu lateral persistente,
+                        navegação por categorias e páginas internas de consulta
+                        e cadastro. O usuário também pode acessar seu espaço,
+                        consultar notificações e alternar o tema visual da
+                        aplicação.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">02 · Problema</p>
+
+                    <h2>O que o sistema resolve?</h2>
+
+                    <p>
+                        O Zeus transforma uma grande quantidade de rotinas
+                        operacionais em entradas organizadas por área. O painel
+                        evita que o usuário precise conhecer a estrutura interna
+                        de cada módulo para encontrar sua tarefa.
+                    </p>
+
+                    <ul>
+                        <li>Acesso centralizado por usuário e senha</li>
+                        <li>Painel com atalhos para os módulos do sistema</li>
+                        <li>Menu lateral com grupos Administrativo e Operacional</li>
+                        <li>Gestão de pessoas, IDP e processos de RH</li>
+                        <li>Campanhas organizadas por cliente e operação</li>
+                        <li>Analytics com Dimensiona, Glosa e BI</li>
+                        <li>Logística com OmniStock e Ilha 100%</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">03 · Solução</p>
+
+                    <h2>Um hub para toda a operação</h2>
+
+                    <p>
+                        O fluxo começa em uma tela de login com a identidade do
+                        Sistema Zeus. Após a autenticação, o painel apresenta
+                        cards como Administrativo, Operacional, Meu Espaço,
+                        Analytics, Intranet, Logística, Sistema e Planejamento.
+                    </p>
+
+                    <p>
+                        O menu lateral agrupa os atalhos por contexto e pode ser
+                        expandido ou reduzido. Dentro de Administrativo, por
+                        exemplo, aparecem Gestão de Pessoas, Templates e seus
+                        processos; em Operacional, Campanhas, Qualidade e
+                        Parceiros.
+                    </p>
+
+                    <p>
+                        As telas internas seguem o mesmo padrão: cabeçalho com
+                        retorno e contexto do módulo, ações como Novo IDP e
+                        Filtro, listagens em tabela e formulários com campos,
+                        anexos, descrição e ações de salvar ou cancelar.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">04 · Arquitetura</p>
+
+                    <h2>Arquitetura de acesso</h2>
+
+                    <p>
+                        O núcleo do Zeus é uma aplicação monolítica em PHP com
+                        MySQL, organizada por pastas de módulo sob um hub comum
+                        de sessão e autorização.
+                    </p>
+
+                    <div class="architecture">
+                        <div class="architecture-node">
+                            Login
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Sessão
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Permissões
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            Menu
+                        </div>
+                    </div>
+
+                    <div class="architecture">
+                        <div class="architecture-node">
+                            Módulos Zeus
+                        </div>
+
+                        <span>→</span>
+
+                        <div class="architecture-node">
+                            MySQL
+                        </div>
+
+                        <span>+</span>
+
+                        <div class="architecture-node">
+                            Integrações
+                        </div>
+                    </div>
+
+                    <p>
+                        A sessão valida o usuário e carrega suas permissões. O
+                        menu apresenta os módulos autorizados, enquanto cada
+                        área mantém suas regras e integrações específicas. A
+                        interface mantém uma linguagem visual consistente entre
+                        o dashboard, as listagens e os formulários.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">05 · Domínios</p>
+
+                    <h2>Principais módulos</h2>
+
+                    <div class="feature-grid">
+                        <div>
+                            <h3>Campanhas</h3>
+                            <p>
+                                Entrada para operações como Ciodes, Fico,
+                                Plan-Assiste, Viana e VLI.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>QualiSys</h3>
+                            <p>
+                                Área operacional para qualidade e acompanhamento
+                                dos processos de monitoria.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Workforce</h3>
+                            <p>
+                                Planejamento e acompanhamento da operação por
+                                meio de escalas e indicadores.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>RH e DP</h3>
+                            <p>
+                                Gestão de Pessoas com IDP, absenteísmo, medida
+                                disciplinar, admissão e folga bônus.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Intranet e comunicação</h3>
+                            <p>
+                                Meu Espaço, Intranet, templates e recursos de
+                                comunicação para os colaboradores.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Dashboards e BI</h3>
+                            <p>
+                                Cards de Analytics para Dimensiona, Glosa e BI,
+                                apoiando o acompanhamento gerencial.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">06 · Decisões técnicas</p>
+
+                    <h2>Algumas decisões importantes</h2>
+
+                    <h3>Autorização centralizada</h3>
+
+                    <p>
+                        Um fluxo comum de sessão e permissões permite que o
+                        sistema controle a visibilidade dos módulos de acordo
+                        com o papel de cada colaborador.
+                    </p>
+
+                    <h3>Módulos independentes no mesmo hub</h3>
+
+                    <p>
+                        A organização por domínios permite evoluir campanhas,
+                        qualidade, RH e workforce com necessidades próprias sem
+                        perder uma experiência de entrada unificada.
+                    </p>
+
+                    <h3>Integrações no fluxo operacional</h3>
+
+                    <p>
+                        Ponto eletrônico, e-mail, estoque, EPI, chamados e BI
+                        participam da rotina da plataforma, evitando que dados e
+                        tarefas importantes fiquem isolados.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="section-eyebrow">07 · Tecnologias</p>
+
+                    <h2>Stack</h2>
+
+                    <div class="stack-list">
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>MariaDB</span>
+                        <span>mysqli</span>
+                        <span>Bootstrap 5</span>
+                        <span>jQuery</span>
+                        <span>Font Awesome</span>
+                        <span>Power BI</span>
+                        <span>Secullum</span>
+                        <span>Dimensiona</span>
+                        <span>PHPMailer</span>
+                        <span>PhpSpreadsheet</span>
+                    </div>
+                </section>
+            </article>
+
+            <aside class="project-sidebar">
+                <div>
+                    <span>Tipo</span>
+                    <strong>Projeto profissional</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>Em produção</strong>
+                </div>
+
+                <div>
+                    <span>Backend</span>
+                    <strong>PHP</strong>
+                </div>
+
+                <div>
+                    <span>Database</span>
+                    <strong>MySQL / MariaDB</strong>
+                </div>
+
+                <div>
+                    <span>Frontend</span>
+                    <strong>Bootstrap / jQuery</strong>
+                </div>
+
+                <div>
+                    <span>Scope</span>
+                    <strong>Contact center</strong>
+                </div>
+            </aside>
+        </div>
+    </main>
+</Layout>
