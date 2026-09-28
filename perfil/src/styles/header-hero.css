@@ -1,4 +1,4 @@
-/* Estilos exclusivos do Header e do Hero */
+/* Estilos do Header, do Hero e do rodapé */
 
 /* ——— Header ——— */
 .site-header {
@@ -431,5 +431,34 @@
 
 	.hero .btn {
 		justify-content: center;
+	}
+}
+
+/* ——— Rodapé ——— */
+.footer {
+	background: var(--color-bg);
+	color: var(--color-muted);
+	border-top: 1px solid color-mix(in srgb, #1e293b 70%, transparent);
+	font-family: var(--font-sans);
+}
+
+.footer-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 1.35rem 1.5rem;
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+	.footer-content {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.35rem;
+		padding: 1.25rem 1.15rem;
 	}
 }

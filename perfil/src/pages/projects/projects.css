@@ -103,8 +103,9 @@
     font-size: 2rem;
 }
 
-.project-content h3 {
+.project-page .project-content h3 {
     margin-top: 2rem;
+    color: var(--color-text);
 }
 
 .project-content p,
