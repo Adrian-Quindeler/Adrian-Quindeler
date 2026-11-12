@@ -1,13 +1,12 @@
 ---
 const projects = [
     {
-        title: "VCOM: Video Communication",
+        title: "Sistema de chamada de vídeo",
         description:
             "Sistema de atendimento por vídeo desenvolvido para uso profissional, com gerenciamento de filas e chamadas, chat, gravações e monitoramento.",
         type: "PRIVADO · PROFISSIONAL",
-        image: "/img/projects/vcom-cover.jpg",
         stack: ["FastAPI", "PostgreSQL", "Redis", "LiveKit"],
-        href: "/projects/vcom",
+        href: "/projects/chamada-de-video",
     },
     {
         title: "Cardápio da Mamute BR 262",
@@ -28,13 +27,12 @@ const projects = [
         href: "/projects/autoatendimento",
     },
     {
-        title: "Sistema Zeus",
+        title: "ERP corporativo",
         description:
             "Sistema interno com login, dashboard modular, menu lateral e ferramentas para pessoas, campanhas, analytics e logística.",
         type: "PRIVADO · PROFISSIONAL",
-        image: "/img/projects/zeus-cover.jpg",
         stack: ["PHP", "MySQL", "Bootstrap", "jQuery"],
-        href: "/projects/zeus",
+        href: "/projects/erp-corporativo",
     },
 ];
 ---
@@ -53,20 +51,30 @@ const projects = [
 
         {projects.map((project, index) => (
             <a href={project.href} class="project-card">
-                <div class="project-image">
-                    <img src={project.image} alt={`Preview do projeto ${project.title}`} loading={index === 0 ? "eager" : "lazy"}/>
+                {project.image && (
+                    <div class="project-image">
+                        <img src={project.image} alt={`Preview do projeto ${project.title}`} loading={index === 0 ? "eager" : "lazy"}/>
 
-                    <span class="project-number">
-                        {String(index + 1).padStart(2, "0")}
-                    </span>
-                </div>
+                        <span class="project-number">
+                            {String(index + 1).padStart(2, "0")}
+                        </span>
+                    </div>
+                )}
 
                 <div class="project-content">
 
                     <div class="project-top">
-                        <span class="project-type">
-                            {project.type}
-                        </span>
+                        <div class="project-heading-meta">
+                            {!project.image && (
+                                <span class="project-number project-number--inline">
+                                    {String(index + 1).padStart(2, "0")}
+                                </span>
+                            )}
+
+                            <span class="project-type">
+                                {project.type}
+                            </span>
+                        </div>
 
                         <span class="project-arrow" aria-hidden="true">
                             ↗

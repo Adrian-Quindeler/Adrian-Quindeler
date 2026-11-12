@@ -291,6 +291,10 @@
 		background-color 0.25s ease;
 }
 
+.project-card:not(:has(.project-image)) {
+	grid-template-columns: 1fr;
+}
+
 .project-card:hover,
 .project-card:focus-visible {
 	border-color: color-mix(in srgb, var(--color-section-ink) 28%, transparent);
@@ -331,6 +335,12 @@
 	text-shadow: 0 1px 8px color-mix(in srgb, #0f172a 55%, transparent);
 }
 
+.project-number--inline {
+	position: static;
+	color: var(--color-section-number);
+	text-shadow: none;
+}
+
 .project-content {
 	display: flex;
 	flex-direction: column;
@@ -344,6 +354,13 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
+}
+
+.project-heading-meta {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	min-width: 0;
 }
 
 .project-type {
